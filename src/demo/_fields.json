@@ -1,0 +1,30 @@
+[
+    {
+        "key": "name",
+        "name": "Name",
+        "type": "text",
+        "minlength": 1,
+        "maxlength": 32
+    },
+    {
+        "key": "gender",
+        "name": "Gender",
+        "type": "enum",
+        "choices": [
+            "Female",
+            "Male"
+        ]
+    },
+    {
+        "key": "age",
+        "name": "Age",
+        "type": "number",
+        "min": 0,
+        "max": 200
+    },
+    {
+        "key": "department",
+        "name": "Department",
+        "type": "text"
+    }
+]

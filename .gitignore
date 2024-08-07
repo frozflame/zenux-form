@@ -1,0 +1,8 @@
+dist/
+dist/main.js
+dist/main.js.LICENSE.txt
+example.json
+*storybook.log
+public/main.js
+public/main.js.map
+_local/

@@ -1,0 +1,55 @@
+.head {
+    height: 45px;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-bottom: 1px solid #ced7e0;
+    background-color: white;
+
+    button {
+        color: gray;
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 15px;
+        font-family: monospace;
+        vertical-align: center;
+    }
+
+    a {
+        font-size: 2rem;
+        text-decoration: none;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    a.dismiss {
+        color: red;
+    }
+
+    a.submit {
+        color: green;
+    }
+}
+
+.body {
+    background-color: white;
+    border: 1px solid #ced7e0;
+    margin: 12px;
+    padding: 12px;
+
+    form {
+        margin: auto;
+    }
+
+    form .input-group {
+        margin: 10px auto;
+        width: 350px;
+
+        .input-group-addon {
+            width: 200px;
+        }
+    }
+}

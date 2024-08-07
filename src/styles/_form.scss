@@ -1,0 +1,40 @@
+.form-item {
+    flex: 0 1 50%;
+    box-sizing: border-box;
+    width: 400px;
+    margin: 10px 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input, select {
+        width: 240px;
+        height: 36px;
+        font-size: 17px;
+        border: 1px solid lightgray;
+        margin: 5px;
+        padding: 3px 6px;
+        box-sizing: border-box;
+        font-family: STFangsong, serif;
+        border-radius: 7px;
+        background-color: #eee;
+        text-align: center;
+    }
+
+    input:focus, select:focus {
+        outline: none;
+        background-color: white;
+    }
+
+    .label {
+        width: 240px;
+        margin: 10px 0;
+        font-size: 15px;
+        //text-align: center;
+    }
+
+    .modified {
+        border: 1px solid black;
+    }
+}
