@@ -1,6 +1,7 @@
 Changes of zenux-form
 ---------------------
 
-wip 0.0.2
+ver 0.0.2
 * add changes.txt
 * export FileField, FileFormKit
+* react and react-dom in peerDependencies, @types in devDependencies
