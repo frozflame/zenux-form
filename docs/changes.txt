@@ -1,6 +1,9 @@
 Changes of zenux-form
 ---------------------
 
+ver 0.0.3
+* add prop "disabled" in _Field
+
 ver 0.0.2
 * add changes.txt
 * export FileField, FileFormKit

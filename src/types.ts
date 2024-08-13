@@ -3,6 +3,7 @@ import {FormKit} from "./kits";
 interface _Field {
     key: string;
     name: string;
+    disabled?: boolean;
 }
 
 interface TextField extends _Field {

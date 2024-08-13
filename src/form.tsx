@@ -13,6 +13,7 @@ function TextInput({field, value, kit}: TextInputProps) {
 
     return <input type="text"
                   name={field.key}
+                  disabled={field.disabled}
                   className={modified ? "modified" : undefined}
                   defaultValue={value}
                   minLength={field.minlength}
@@ -32,12 +33,11 @@ function EnumInput({field, value, kit}: EnumInputProps) {
     const options = field.choices.map((choice, idx) => {
         return <option value={choice} key={idx}>{choice}</option>
     });
-    return <select name={field.key} defaultValue={value}
+    return <select name={field.key} disabled={field.disabled} defaultValue={value}
                    onChange={handleChange} className={modified ? "modified" : undefined}>
         {options}
     </select>
 }
-
 
 
 function NumberInput({field, value, kit}: NumberInputProps) {
@@ -50,8 +50,8 @@ function NumberInput({field, value, kit}: NumberInputProps) {
     }
 
     return <input type="number"
-                  name={field.key} defaultValue={value}
-                  min={field.min} max={field.max}
+                  name={field.key} disabled={field.disabled}
+                  defaultValue={value} min={field.min} max={field.max}
                   onChange={handleChange} className={modified ? "modified" : undefined}/>
 }
 
