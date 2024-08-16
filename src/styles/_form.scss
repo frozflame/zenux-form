@@ -12,19 +12,24 @@
         width: 240px;
         height: 36px;
         font-size: 17px;
-        border: 1px solid lightgray;
+        border: 1px solid gray;
         margin: 5px;
         padding: 3px 6px;
         box-sizing: border-box;
         font-family: STFangsong, serif;
         border-radius: 7px;
-        background-color: #eee;
+        //background-color: #eee;
         text-align: center;
     }
 
     input:focus, select:focus {
         outline: none;
-        background-color: white;
+        border: 1px solid dodgerblue;
+    }
+
+    input[disabled], select[disabled] {
+        color: inherit;
+        background-color: #eee;
     }
 
     .label {
@@ -35,6 +40,6 @@
     }
 
     .modified {
-        border: 1px solid black;
+        color: dodgerblue;
     }
 }

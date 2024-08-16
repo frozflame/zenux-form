@@ -1,5 +1,11 @@
 [
     {
+        "key": "id",
+        "name": "ID",
+        "type": "text",
+        "disabled": true
+    },
+    {
         "key": "name",
         "name": "Name",
         "type": "text",
@@ -26,5 +32,10 @@
         "key": "department",
         "name": "Department",
         "type": "text"
+    },
+    {
+        "key": "active",
+        "name": "Active",
+        "type": "bool"
     }
 ]

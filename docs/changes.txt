@@ -1,6 +1,11 @@
 Changes of zenux-form
 ---------------------
 
+0.0.4
+* add field type 'bool': BoolInput, BoolField
+* polish form styling
+* set "publishConfig" in package.json
+
 ver 0.0.3
 * add prop "disabled" in _Field
 

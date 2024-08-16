@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {EnumInputProps, FormItemProps, NumberInputProps, TextInputProps} from "./types";
+import {BoolInputProps, EnumInputProps, FormItemProps, NumberInputProps, TextInputProps} from "./types";
 import {FormKit} from "./kits";
 
 
@@ -19,6 +19,23 @@ function TextInput({field, value, kit}: TextInputProps) {
                   minLength={field.minlength}
                   maxLength={field.maxlength}
                   onChange={handleChange}/>
+}
+
+
+function BoolInput({field, value, kit}: BoolInputProps) {
+    const [modified, setModified] = useState<boolean>(false);
+
+    function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
+        const _value = event.target.value == 'yes';
+        kit.change(field.key, _value);
+        setModified(value !== _value);
+    }
+
+    return <select name={field.key} disabled={field.disabled} defaultValue={value ? 'yes' : 'no'}
+                   onChange={handleChange} className={modified ? "modified" : undefined}>
+        <option value='yes' key='yes'>Yes</option>
+        <option value='no' key='no'>No</option>
+    </select>
 }
 
 
@@ -57,13 +74,16 @@ function NumberInput({field, value, kit}: NumberInputProps) {
 
 
 function FormInput(props: FormItemProps) {
+    console.log('forminput, ', props)
     switch (props.field.type) {
-        case "text":
-            return <TextInput {...props as TextInputProps}/>
-        case "number":
-            return <NumberInput {...props as NumberInputProps}/>
+        case "bool":
+            return <BoolInput {...props as BoolInputProps}/>
         case "enum":
             return <EnumInput {...props as EnumInputProps}/>
+        case "number":
+            return <NumberInput {...props as NumberInputProps}/>
+        case "text":
+            return <TextInput {...props as TextInputProps}/>
         default:
             console.error("unknown column: ", props.field);
             return <></>

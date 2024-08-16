@@ -1,6 +1,6 @@
 {
     "name": "zenux-form",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "form and modal components in react",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -15,6 +15,9 @@
         "modal",
         "react"
     ],
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
     "devDependencies": {
         "@babel/cli": "^7.23.0",
         "@babel/core": "^7.23.0",

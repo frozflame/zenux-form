@@ -1,6 +1,8 @@
 {
+    "id": "0001",
     "gender": "Female",
     "age": 45,
     "department": "R&D",
-    "name": "Alice Ree"
+    "name": "Alice Ree",
+    "active": true
 }

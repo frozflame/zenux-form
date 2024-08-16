@@ -6,6 +6,11 @@ interface _Field {
     disabled?: boolean;
 }
 
+
+interface BoolField extends _Field {
+    type: 'bool';
+}
+
 interface TextField extends _Field {
     type: 'text';
     minlength?: number;
@@ -29,6 +34,13 @@ interface OtherField extends _Field {
 }
 
 export type Field = TextField | NumberField | EnumField | OtherField;
+
+
+export interface BoolInputProps {
+    field: BoolField;
+    value: boolean;
+    kit: FormKit;
+}
 
 
 export interface TextInputProps {
@@ -58,7 +70,7 @@ export interface OtherInputProps {
 
 
 export type FormItemProps =
-    TextInputProps | NumberInputProps | EnumInputProps | OtherInputProps;
+    BoolInputProps | TextInputProps | NumberInputProps | EnumInputProps | OtherInputProps;
 
 export interface FileField extends _Field {
     type: 'file';
