@@ -1,6 +1,9 @@
 Changes of zenux-form
 ---------------------
 
+0.0.5
+* optional field prop "subtype": for email, password
+
 0.0.4
 * add field type 'bool': BoolInput, BoolField
 * polish form styling

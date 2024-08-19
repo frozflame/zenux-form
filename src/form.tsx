@@ -3,25 +3,6 @@ import {BoolInputProps, EnumInputProps, FormItemProps, NumberInputProps, TextInp
 import {FormKit} from "./kits";
 
 
-function TextInput({field, value, kit}: TextInputProps) {
-    const [modified, setModified] = useState<boolean>(false);
-
-    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-        kit.change(field.key, event.target.value);
-        setModified(value !== event.target.value);
-    }
-
-    return <input type="text"
-                  name={field.key}
-                  disabled={field.disabled}
-                  className={modified ? "modified" : undefined}
-                  defaultValue={value}
-                  minLength={field.minlength}
-                  maxLength={field.maxlength}
-                  onChange={handleChange}/>
-}
-
-
 function BoolInput({field, value, kit}: BoolInputProps) {
     const [modified, setModified] = useState<boolean>(false);
 
@@ -70,6 +51,25 @@ function NumberInput({field, value, kit}: NumberInputProps) {
                   name={field.key} disabled={field.disabled}
                   defaultValue={value} min={field.min} max={field.max}
                   onChange={handleChange} className={modified ? "modified" : undefined}/>
+}
+
+
+function TextInput({field, value, kit}: TextInputProps) {
+    const [modified, setModified] = useState<boolean>(false);
+
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+        kit.change(field.key, event.target.value);
+        setModified(value !== event.target.value);
+    }
+
+    return <input type={field.subtype || 'text'}
+                  name={field.key}
+                  disabled={field.disabled}
+                  className={modified ? "modified" : undefined}
+                  defaultValue={value}
+                  minLength={field.minlength}
+                  maxLength={field.maxlength}
+                  onChange={handleChange}/>
 }
 
 

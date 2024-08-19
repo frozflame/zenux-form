@@ -11,10 +11,10 @@ interface BoolField extends _Field {
     type: 'bool';
 }
 
-interface TextField extends _Field {
-    type: 'text';
-    minlength?: number;
-    maxlength?: number;
+
+interface EnumField extends _Field {
+    type: 'enum';
+    choices: string[];
 }
 
 interface NumberField extends _Field {
@@ -23,9 +23,11 @@ interface NumberField extends _Field {
     max?: number | string;
 }
 
-interface EnumField extends _Field {
-    type: 'enum';
-    choices: string[];
+interface TextField extends _Field {
+    type: 'text';
+    subtype: 'email' | 'password';
+    minlength?: number;
+    maxlength?: number;
 }
 
 
