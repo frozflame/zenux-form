@@ -1,6 +1,9 @@
 Changes of zenux-form
 ---------------------
 
+0.0.6
+* optional field prop "wide": for full-width input, currently for textarea
+
 0.0.5
 * optional field prop "subtype": for email, password
 

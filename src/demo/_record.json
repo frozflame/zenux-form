@@ -4,5 +4,6 @@
     "age": 45,
     "department": "R&D",
     "name": "Alice Ree",
-    "active": true
+    "active": true,
+    "path": "/path/to/log/file"
 }

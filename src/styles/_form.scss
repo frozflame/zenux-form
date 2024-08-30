@@ -8,6 +8,10 @@
     flex-direction: column;
     align-items: center;
 
+    textarea {
+        padding: 6px;
+    }
+
     input, select {
         width: 240px;
         height: 36px;
@@ -41,5 +45,22 @@
 
     .modified {
         color: dodgerblue;
+    }
+}
+
+.form-item.wide {
+    flex: 0 1 100%;
+    width: 400px;
+
+    .label {
+        width: 626px;
+        margin: 10px 0;
+        font-size: 15px;
+        //text-align: center;
+    }
+
+    textarea {
+        width: 626px;
+        border-radius: 7px;
     }
 }

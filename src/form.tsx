@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {BoolInputProps, EnumInputProps, FormItemProps, NumberInputProps, TextInputProps} from "./types";
 import {FormKit} from "./kits";
+import {joinClassNames} from "zenux";
 
 
 function BoolInput({field, value, kit}: BoolInputProps) {
@@ -57,9 +58,20 @@ function NumberInput({field, value, kit}: NumberInputProps) {
 function TextInput({field, value, kit}: TextInputProps) {
     const [modified, setModified] = useState<boolean>(false);
 
-    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         kit.change(field.key, event.target.value);
         setModified(value !== event.target.value);
+    }
+
+    if (field.wide) {
+        return <textarea name={field.key}
+                         disabled={field.disabled}
+                         className={modified ? "modified" : undefined}
+                         defaultValue={value}
+                         minLength={field.minlength}
+                         maxLength={field.maxlength}
+                         cols={72} rows={4}
+                         onChange={handleChange}/>
     }
 
     return <input type={field.subtype || 'text'}
@@ -74,7 +86,6 @@ function TextInput({field, value, kit}: TextInputProps) {
 
 
 function FormInput(props: FormItemProps) {
-    console.log('forminput, ', props)
     switch (props.field.type) {
         case "bool":
             return <BoolInput {...props as BoolInputProps}/>
@@ -90,9 +101,15 @@ function FormInput(props: FormItemProps) {
     }
 }
 
+
 function FormItem(props: FormItemProps) {
-    return <div className="form-item">
-        <div className="label">{props.field.name}</div>
+    const field = props.field;
+    const className = joinClassNames(
+        "form-item",
+        field.wide ? 'wide' : ''
+    )
+    return <div className={className}>
+        <div className="label">{field.name}</div>
         <div className="input">
             <FormInput {...props}/>
         </div>

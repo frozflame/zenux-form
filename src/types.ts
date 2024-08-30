@@ -3,6 +3,7 @@ import {FormKit} from "./kits";
 interface _Field {
     key: string;
     name: string;
+    wide?: boolean;
     disabled?: boolean;
 }
 
@@ -29,7 +30,6 @@ interface TextField extends _Field {
     minlength?: number;
     maxlength?: number;
 }
-
 
 interface OtherField extends _Field {
     type: string;
